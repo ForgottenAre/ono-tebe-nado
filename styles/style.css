@@ -4,8 +4,6 @@ body {
 }
 
 header {
-  height: 289px;
-  width: 1100px;
   background-color: rgb(255, 255, 255);
 }
 
@@ -27,6 +25,7 @@ span {
 .header__nav-list {
   display: inline-flex;
   font-size: 18px;
+  margin-left: 5px;
 }
 
 .header__nav-item {
@@ -34,7 +33,7 @@ span {
 }
 
 .header__nav-item-active {
-  margin-left: 27px;
+  margin-left: 33px;
   list-style: circle;
 }
 
@@ -45,6 +44,8 @@ span {
 .header__contacts-container {
   display: flex;
   justify-content: flex-end;
+  margin-right: 12px;
+  margin-bottom: 5px;
 }
 
 .header__contacts_list {
@@ -59,22 +60,31 @@ span {
   line-height: 1.2;
 }
 
+.header_contacts-passive {
+  text-decoration: none;
+}
+
 .cover {
   background-image: url(cover.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 1380px 780px;
+  background-size: cover;
 }
 
 .overlay {
-  background-color: rgba(7, 7, 7, 0.6);
-  min-height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 1100px;
+  height: 757px;
+  z-index: 0;
 }
 
 .cover__title {
+  position: relative;
   text-transform: uppercase;
   max-height: 700px;
-  padding: 175px 15px 113px 50px;
+  padding: 165px 15px 113px 50px;
+  z-index: 1;
 }
 
 .cover-span {
@@ -113,20 +123,21 @@ span {
 }
 
 .cover__description {
+  position: relative;
   display: flex;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   margin-left: 78px;
-  margin-right: 50px;
   padding-bottom: 50px;
+  z-index: 1;
 }
 
 .cover__footer {
   display: flex;
-  font-size: 24px;
-  word-spacing: 10px;
+  font-size: 22px;
+  word-spacing: 18px;
   align-items: center;
-  margin-top: 12px;
+  margin-top: 25px;
   margin-bottom: 12px;
 }
 
@@ -135,9 +146,11 @@ span {
   text-transform: uppercase;
   background-color: transparent;
   color: rgb(255, 255, 255);
-  margin-left: 59px;
-  font-size: 26px;
-  width: 276px;
+  margin-left: 80px;
+  margin-top: 10px;
+  font-size: 22px;
+  width: 256px;
+  max-height: 51px;
   border: 0.1px solid rgb(255, 255, 255);
 }
 
@@ -158,32 +171,32 @@ span {
 }
 
 .card {
-  display: flex;
+  max-width: 334px;
+  max-height: 566px;
+  background-color: antiquewhite;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: 1;
+}
+
+.card__overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
   width: 334px;
   height: 566px;
-  background-color: antiquewhite;
 }
 
 .card_type_film {
   background-image: url(card-lot-01.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
   margin-bottom: 30px;
 }
 
 .card_type_book {
   background-image: url(card-lot-02.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
 }
 
 .card_type_picture {
   background-image: url(card-lot-03.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
 }
 
 .lots_more {
@@ -192,30 +205,38 @@ span {
 }
 
 .card__text_film_title {
+  position: relative;
   padding: 51px 40px 0px;
   font-size: 22px;
   font-weight: bold;
   text-decoration: underline;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
+  z-index: 0;
 }
 
 .card__text_film_description {
+  position: relative;
   font-size: 20px;
   padding: 238px 40px 48px;
   color: rgb(255, 255, 255);
+  z-index: 0;
 }
 
 .card__text_book_description {
+  position: relative;
   font-size: 20px;
   color: rgb(255, 255, 255);
   padding: 0px 40px 48px;
+  z-index: 0;
 }
 
 .card__text_picture_title {
+  position: relative;
   font-size: 20px;
   color: rgb(255, 255, 255);
   padding: 95px 40px 48px;
+  z-index: 0;
 }
 
 .about {
@@ -265,7 +286,7 @@ span {
   font-size: 20px;
 }
 
-.footer__menu {
+.footer__contacts-menu {
   background-color: rgb(255, 255, 255);
   display: grid;
   gap: 25px;
